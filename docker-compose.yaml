@@ -1,0 +1,29 @@
+version: '3.7'
+
+services:
+  app:
+    image: app:${SERVICE_IMAGE_TAG}
+    container_name: app
+    restart: ${RESTART_POLICY}
+    environment:
+      - TZ
+      - SERVER_PORT
+      - API_BASE_PATH
+      - OPENAPI_TITLE
+      - OPENAPI_DESCRIPTION
+      - OPENAPI_VERSION
+      - OPENAPI_TERMS-OF-SERVICE-URL
+      - OPENAPI_LICENCE
+      - OPENAPI_LICENCE_URL
+      - PROBLEM_FIELD_ERRORS_KEY
+      - PROBLEM_MESSAGE_KEY
+      - PROBLEM_PATH_KEY
+      - PROBLEM_VIOLATIONS_KEY
+      - PROBLEM_ERROR_VALIDATION
+      - PROBLEM_BASE_URL
+      - PROBLEM_UNEXPECTED_ERROR_PACKAGE_LIST
+      - TESSDATA_PATH
+      - TESSERACT_LANGUAGE
+      - TESSERACT_DPI
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
