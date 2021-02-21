@@ -9,6 +9,7 @@ services:
       - TZ
       - SERVER_PORT
       - API_BASE_PATH
+      - MAX_FILE_SIZE
       - OPENAPI_TITLE
       - OPENAPI_DESCRIPTION
       - OPENAPI_VERSION
