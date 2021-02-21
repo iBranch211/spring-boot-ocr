@@ -1,7 +1,7 @@
 # Spring Boot Ocr Api
 > Spring Boot Ocr Api
 >
-<img src="https://github.com/susimsek/spring-boot-ocr/blob/main/images/spring-boot-ocr.png" alt="Spring Boot Ocr Api" width="100%" height="100%"/> 
+<img src="https://github.com/susimsek/spring-boot-ocr/blob/main/images/spring-boot-ocr-opencv.png" alt="Spring Boot Ocr Api" width="100%" height="100%"/> 
 
 ## Prerequisites
 
