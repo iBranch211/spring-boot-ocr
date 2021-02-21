@@ -2,7 +2,6 @@ package com.spring.ocr.util;
 
 import lombok.experimental.UtilityClass;
 import org.opencv.core.Mat;
-import org.opencv.imgcodecs.Imgcodecs;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -38,18 +37,13 @@ public class OcrUtil {
         //Grayscale
         mat=OpencvUtil.gray(mat);
 
-        Imgcodecs.imwrite("test/gray.png", mat);
 
         //gaussianBlur
         mat=OpencvUtil.gaussianBlur(mat);
 
-        Imgcodecs.imwrite("test/gaussian-blur.png", mat);
-
 
         //Remove Noise
         mat=OpencvUtil.navieRemoveNoise(mat,1);
-
-        Imgcodecs.imwrite("test/noiseless.png", mat);
 
 
         return mat;
