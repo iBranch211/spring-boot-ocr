@@ -1,8 +1,8 @@
 package com.spring.ocr.service.impl;
 
 import com.spring.ocr.model.response.ImageTextDto;
+import com.spring.ocr.service.ImageProcessService;
 import com.spring.ocr.service.OcrService;
-import com.spring.ocr.util.ImageUtil;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -12,6 +12,7 @@ import net.sourceforge.tess4j.TesseractException;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 
 @Service
@@ -21,13 +22,14 @@ import java.io.IOException;
 public class OcrServiceImpl implements OcrService {
 
     final Tesseract tesseract;
+    final ImageProcessService imageProcessService;
 
     @Override
     public ImageTextDto extractTextFromImage(MultipartFile file) throws IOException {
         try {
 
-            String text = tesseract.doOCR(ImageUtil.createImageFromBytes(file.getBytes()));
-
+            BufferedImage bufferedImage = imageProcessService.preprocessImage(file.getBytes());
+            String text = tesseract.doOCR(bufferedImage);
             return ImageTextDto.builder()
                     .fileName(file.getOriginalFilename())
                     .text(text)

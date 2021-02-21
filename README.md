@@ -25,6 +25,7 @@ docker-compose up -d
 
 * Spring Boot 2.4.3
 * Tesseract  
+* Opencv  
 * Spring Boot Web 
 * Problem Spring Web
 * SpringDoc Openapi WebMvc Core

@@ -28,6 +28,7 @@
         <problem-spring-web.version>0.26.2</problem-spring-web.version>
         <springdoc.version>1.5.2</springdoc.version>
         <tess4j.version>4.5.4</tess4j.version>
+        <opencv.version>4.3.0-3</opencv.version>
     </properties>
 
     <dependencies>
@@ -43,6 +44,11 @@
             <groupId>net.sourceforge.tess4j</groupId>
             <artifactId>tess4j</artifactId>
             <version>${tess4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openpnp</groupId>
+            <artifactId>opencv</artifactId>
+            <version>${opencv.version}</version>
         </dependency>
         <dependency>
             <groupId>org.zalando</groupId>

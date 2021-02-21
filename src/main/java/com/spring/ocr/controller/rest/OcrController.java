@@ -32,6 +32,7 @@ public class OcrController {
 
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Ok",content = @Content(array = @ArraySchema(schema = @Schema(implementation = ImageTextDto.class)))),
+            @ApiResponse(responseCode = "400", description = "Bad Request",content = @Content),
             @ApiResponse(responseCode = "500", description = "Internal Server Error",content = @Content)
 
     })
